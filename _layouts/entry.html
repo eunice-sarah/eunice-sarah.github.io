@@ -1,0 +1,25 @@
+---
+layout: base
+---
+{%- assign shelf = site.shelves | where: "id", page.category | first -%}
+
+<article class="entry">
+  <header class="entry-head">
+    <p class="meta">
+      <a href="/something-for-later/{{ page.category }}/">{{ shelf.name }}</a> · {{ page.date | date: "%-d %B %Y" }}
+    </p>
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  {%- if page.cover %}
+  <figure class="entry-cover"><img src="{{ page.cover }}" alt=""></figure>
+  {%- endif %}
+
+  <div class="entry-body">
+    {{ content }}
+  </div>
+
+  <p class="signature script">Sincerely, Nice.</p>
+
+  <a class="back" href="/something-for-later/{{ page.category }}/">← More {{ shelf.name | downcase }}</a>
+</article>

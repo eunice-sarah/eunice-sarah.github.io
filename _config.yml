@@ -1,0 +1,52 @@
+# ==========================================================
+#  Site settings — Eunice Sarah / Sincerely, Nice
+#  After editing this file, the site takes ~2 minutes to rebuild.
+# ==========================================================
+
+title: Eunice Sarah
+url: "https://eunice-sarah.github.io"
+baseurl: ""
+timezone: Asia/Jakarta
+future: true        # show entries even if their date is later today/in the future
+
+# Default share image (used when an entry has no cover photo)
+share_image: /assets/images/sincerelynice-thumbnail.jpg
+
+# ----- Something for Later: entries live in the _later folder -----
+collections:
+  later:
+    output: true
+    permalink: /something-for-later/:name/
+
+# ----- The three shelves (used on the hub and category pages) -----
+# "id" must match the "category:" you write in each entry.
+shelves:
+  - id: thoughts
+    name: Thoughts
+    eyebrow: Some thoughts for later
+    blurb: Unfinished ideas, questions I keep circling, and observations that asked to be written down.
+  - id: places
+    name: Places
+    eyebrow: Some good places for later
+    blurb: Corners, walks, tables, journeys, and places that made the day feel different.
+  - id: things
+    name: Things
+    eyebrow: Some things for later
+    blurb: Books, objects, films, sounds, tools, and small discoveries I don't want to misplace.
+
+# ----- Sitemap for Google Search Console (/sitemap.xml) -----
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope: { path: "", type: "later" }
+    values: { layout: entry }
+  - scope: { path: "404.html" }
+    values: { sitemap: false }
+  - scope: { path: "google79b3e6c45fce955d.html" }
+    values: { sitemap: false }
+
+# Files that should NOT appear on the website
+exclude:
+  - README.md
+  - ENTRY-TEMPLATE.md

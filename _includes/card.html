@@ -1,0 +1,9 @@
+{%- comment -%} One entry card. Used on the hub and category pages. {%- endcomment -%}
+<a class="card{% unless include.entry.cover %} no-img{% endunless %}" href="{{ include.entry.url }}">
+  {%- if include.entry.cover %}
+  <div class="card-img"><img src="{{ include.entry.cover }}" alt="" loading="lazy"></div>
+  {%- endif %}
+  <p class="meta">{{ include.entry.category | capitalize }} · {{ include.entry.date | date: "%-d %b %Y" }}</p>
+  <h3>{{ include.entry.title }}</h3>
+  <p class="excerpt">{{ include.entry.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+</a>

@@ -1,0 +1,21 @@
+---
+layout: base
+---
+{%- assign shelf = site.shelves | where: "id", page.shelf | first -%}
+{%- assign entries = site.later | where: "category", page.shelf | sort: "date" | reverse -%}
+
+<header class="page-head">
+  <a class="back" href="/something-for-later.html">← Something for Later</a>
+  <h1>{{ shelf.name }}</h1>
+  <p class="lede">{{ shelf.blurb }}</p>
+</header>
+
+<section class="shelf-grid">
+  {%- if entries.size > 0 -%}
+    {%- for e in entries -%}
+      {% include card.html entry=e %}
+    {%- endfor -%}
+  {%- else -%}
+    <p class="empty">Nothing here yet. Check back <span class="script">later.</span></p>
+  {%- endif -%}
+</section>

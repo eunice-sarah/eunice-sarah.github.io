@@ -1,0 +1,36 @@
+---
+layout: base
+title: Something for Later
+title_tag: Something for Later — Eunice Sarah
+description: Thoughts, good places, useful things, strange details. Whatever feels worth coming back to.
+---
+
+<!-- SECTION 1: intro -->
+<header class="page-head hub">
+  <h1 class="script">Something for Later</h1>
+  <p class="lede">Thoughts, good places, useful things, strange details. <br class="desktop-only">Whatever feels worth coming back to.</p>
+</header>
+
+<!-- SECTION 2: the three shelves -->
+<section class="shelves">
+  <div class="shelves-head">
+    <h2>Three shelves.<br>No fixed niche.</h2>
+    <p>The categories are only places to begin. Anything can belong here if it feels worth finding again.</p>
+  </div>
+
+  <div class="boxes">
+    {%- for shelf in site.shelves %}
+    <a class="box" href="/something-for-later/{{ shelf.id }}/">
+      <div class="box-band">
+        <span class="box-num">0{{ forloop.index }}</span>
+        <h3>{{ shelf.name }}</h3>
+      </div>
+      <div class="box-body">
+        <p class="box-eyebrow">{{ shelf.eyebrow }}</p>
+        <p class="box-blurb">{{ shelf.blurb }}</p>
+        <span class="box-link"><span>Open the shelf</span> <span class="arrow">↗</span></span>
+      </div>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
