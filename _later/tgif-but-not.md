@@ -1,9 +1,9 @@
 ---
 title: The Good Is Fleeting
-date:2026-10-02
+date: 2026-10-02
 category: thoughts
 cover: /assets/images/later/tgif-but-not.jpg
-excertp: Some thoughts for Later | I too wish I could write better things when this article is published.
+excerpt: Some thoughts for Later | I too wish I could write better things when this article is published.
 ---
 
 I had thought worse title that stands from TGIF. But I guess I should not.
