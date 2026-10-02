@@ -5,7 +5,7 @@ layout: base
 {%- assign entries = site.later | where: "category", page.shelf | sort: "date" | reverse -%}
 
 <header class="page-head">
-  <a class="back" href="/something-for-later.html">← Something for Later</a>
+  <a class="back" href="/something-for-later">← Something for Later</a>
   <h1>{{ shelf.name }}</h1>
   <p class="lede">{{ shelf.blurb }}</p>
 </header>
